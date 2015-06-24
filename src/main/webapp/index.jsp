@@ -18,10 +18,13 @@
     <body>
         <h1>CS313 Plays Games!</h1>
         
-        <iframe id="player" type="text/html" width="800" height="600"
-        src="http://www.twitch.tv/nintendood_prime/embed"
-        frameborder="0">
-            
-        </iframe>
+        <iframe src="http://www.twitch.tv/nintendood_prime/embed" frameborder="0" scrolling="no" height="378" width="620"></iframe>
+        
+        <iframe src="http://www.twitch.tv/nintendood_prime/chat?popout=" frameborder="0" scrolling="no" height="500" width="350"></iframe>
+        
+        <br/>
+        
+        
+</iframe>
     </body>
 </html>
