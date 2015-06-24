@@ -22,7 +22,6 @@
         <title>CS313 Plays Games</title>
     </head>
     <body>
-        <h1>CS313 Plays Games!</h1>
         <br />
         <img src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="twitch-connect" href="#" />
         <br />
