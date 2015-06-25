@@ -23,8 +23,6 @@
     </head>
     <body>
         <br />
-        <img src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="twitch-connect" href="#" />
-        <br />
         
         <iframe src="http://www.twitch.tv/nintendood_prime/embed" frameborder="0" scrolling="no" height="378" width="620"></iframe>
         
