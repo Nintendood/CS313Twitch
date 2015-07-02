@@ -3,20 +3,19 @@
  */
 
 $(document).ready(function() {
-    var chat = $("#chat");
-    chat.on("load", function() {
-        chat.contents().click(function() {
-            alert("HERE!");
-        });
-    });
-});
-
-// Grab the text when the user pushes the button!
-$("#chat").load(function() {
-    var chat = $("#chat").contents();
-
-     // Now check for a click event!
-    chat.find("button").click(function() {
-        alert("BUTTON clicked!");
+    // Grab click events on tabs!
+    $("li").click(function() {
+        // Which one was clicked on?
+        var id = $(this).attr("id");
+               
+        // Now switch the tab contents
+        if (id === 'about') {
+            // Grab the div tags
+            $("div#about").removeClass("none");
+            $("div#howToPlay").addClass("none");
+        } else {
+            $("div#about").addClass("none");
+            $("div#howToPlay").removeClass("none");
+        }
     });
 });
