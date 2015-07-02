@@ -1,0 +1,15 @@
+/*
+    styles.css
+*/
+
+h1 {
+    text-align: center;
+}
+
+.jumbotron {
+    padding: 10px 15px;
+}
+
+html, body {
+    background-image: url("https://sickr.files.wordpress.com/2012/07/nintendo_characters.jpg");
+}
