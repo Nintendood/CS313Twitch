@@ -5,6 +5,7 @@
  */
 package com.mycompany.twitchplays;
 
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -26,7 +27,7 @@ public class Main {
 
         try {
             TwitchIRC irc = new TwitchIRC("nintendood_prime", "q4v9jcr47pe39s5jubfajyzj0vbhjb");
-            irc.connectToChannel("#twitchplayspokemon");
+            irc.connectToChannel("#CS313PlaysGames");
             String message;
             while (true) {
                 message = irc.readMessage().toLowerCase();

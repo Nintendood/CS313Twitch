@@ -12,28 +12,40 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.jibble.pircbot.IrcException;
+import org.jibble.pircbot.PircBot;
+import sun.rmi.runtime.Log;
 
 /**
  *
  * @author Adam Harris
  */
-public class TwitchIRC {
+public class TwitchIRC extends PircBot{
     private final String token;
     private final String nickname;
-    private final Socket socket;
+    private final String channel;
+    private final int port;
     private BufferedReader br;
     private Pattern message;
     
-    public TwitchIRC(String nickname, String token) throws IOException {
+    public TwitchIRC(String nickname, String token, int port, String channel) throws IOException {
         
         this.nickname = nickname;
         this.token = token;
-        this.socket = new Socket();
-        socket.connect(new InetSocketAddress("irc.twitch.tv", 6667));
-        this.br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        message = Pattern.compile(".* PRIVMSG #twitchplays :(.*)");  
+        this.port = port;
+        this.channel = channel;
+        try {
+            this.connect(nickname, port, token);
+            System.out.println("TwitchIRC is being called");
+            this.joinChannel("#" + channel);
+            Logger.getLogger(nickname + " " + token + " " + " " + channel).log(Level.INFO, null);
+        } catch (IrcException ex) {
+            Logger.getLogger(TwitchIRC.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public void connectToChannel(String channel) throws IOException{
@@ -47,11 +59,15 @@ public class TwitchIRC {
     }
     
     public String readLine() throws IOException{
+      System.out.println("readLine is being called");
         return br.readLine();
+        
     }
     
     public String readMessage() throws IOException {
         String line = readLine();
+        System.out.println("readMessage is being called");
+
         if (line == null)
         {
             return null;
