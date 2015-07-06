@@ -29,8 +29,5 @@
         <iframe src="http://www.twitch.tv/nintendood_prime/chat?popout=" frameborder="0" scrolling="no" height="500" width="350"></iframe>
         
         <br/>
-        
-        
-</iframe>
     </body>
 </html>
