@@ -23,7 +23,7 @@ public class Main {
         try {
             trob.connect("irc.twitch.tv", 6667, cred.getToken());
             trob.joinChannel(cred.getChannel());
-         } catch (IOException ex) {
+        } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IrcException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
