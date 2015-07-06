@@ -5,47 +5,28 @@
  */
 package com.mycompany.twitchplays;
 
-
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.jibble.pircbot.IrcException;
 
 /**
  *
- * @author Adam Harris
+ * @author john
  */
 public class Main {
-    public static void main(String[] args) {
-        Map<String, String> commands = new HashMap<String, String>();
-        commands.put("start", "x");
-        commands.put("a", "a");
-        commands.put("b", "b");
-        commands.put("left", "l");
-        commands.put("right", "r");
-        commands.put("up", "u");
-        commands.put("down", "d");
-
+    
+    public static void main(String[] args){
+        Credentials cred = new Credentials();
+        TwitchRobo trob = new TwitchRobo();
+        trob.setVerbose(true);
         try {
-            TwitchIRC irc = new TwitchIRC("nintendood_prime", "q4v9jcr47pe39s5jubfajyzj0vbhjb");
-            irc.connectToChannel("#CS 313 Plays Games!");
-            String message;
-            while (true) {
-                message = irc.readMessage().toLowerCase();
-                System.out.println(message);
-                if (message != null) {
-                    if (commands.containsKey(message)) {
-                        execute(args[0], commands.get(message));
-                    }
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+            trob.connect("irc.twitch.tv", 6667, cred.getToken());
+            trob.joinChannel(cred.getChannel());
+         } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IrcException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-
-    private static void execute(String window, String button) throws IOException {
-        String command =
-                "xdotool search --desktop 0 " + window + " windowactivate --sync key --clearmodifiers " + button;
-        Runtime.getRuntime().exec(command);
     }
 }
