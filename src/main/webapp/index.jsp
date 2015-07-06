@@ -54,7 +54,7 @@
                     CS313 Twitch Plays is a website that allows the user to play Super Mario RPG. This is currently in development. 
                 </div>
             </div>
-            <div id="howToPlay" class="panel panel-primary">
+            <div id="howToPlay" class="panel panel-primary none">
                 <div class="panel panel-heading">How to Play</div>
                 <div class="panel panel-body">
                     Currently in development.
