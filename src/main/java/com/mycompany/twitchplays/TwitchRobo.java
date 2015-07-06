@@ -7,6 +7,8 @@ package com.mycompany.twitchplays;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.util.HashMap;
+import java.util.Map;
 import org.jibble.pircbot.PircBot;
 
 /**
@@ -16,99 +18,33 @@ import org.jibble.pircbot.PircBot;
 public class TwitchRobo extends PircBot {
     private final Credentials cred = new Credentials();
     
+    private Map<String, Integer> input = new HashMap<String, Integer>();
+    
+    
+    
     
     public TwitchRobo() {
         this.setName(cred.getUsername());
-        
-        
+        input.put("enter", KeyEvent.VK_O);
+        input.put("up", KeyEvent.VK_U);
+        input.put("down", KeyEvent.VK_D);
+        input.put("a", KeyEvent.VK_A);
+        input.put("b", KeyEvent.VK_B);
+        input.put("left", KeyEvent.VK_L);
+        input.put("right", KeyEvent.VK_R);
     }
     
     @Override
     public void onMessage(String channel, String sender, String login, String hostname, String message){
         
-            if(message.equalsIgnoreCase("enter")){
-                    try{
-                        Robot robo = new Robot();
-                        robo.delay(1500);
-                        robo.keyPress(KeyEvent.VK_Q);
-                        robo.delay(100);
-                        robo.keyRelease(KeyEvent.VK_Q);
-                    }catch(Exception ex){
-                        ex.printStackTrace();
-                    }
-                }
-                
-                 if(message.equalsIgnoreCase("up")){
-                    try{
-                        Robot robo = new Robot();
-                        robo.delay(1500);
-                        robo.keyPress(KeyEvent.VK_U);
-                        robo.delay(100);
-                        robo.keyRelease(KeyEvent.VK_U);
-                    }catch(Exception ex){
-                        ex.printStackTrace();
-                    }
-                }
-                 
-                  if(message.equalsIgnoreCase("down")){
-                    try{
-                        Robot robo = new Robot();
-                        robo.delay(1500);
-                        robo.keyPress(KeyEvent.VK_D);
-                        robo.delay(100);
-                        robo.keyRelease(KeyEvent.VK_D);
-                    }catch(Exception ex){
-                        ex.printStackTrace();
-                    }
-                }
-                  
-                   if(message.equalsIgnoreCase("a")){
-                    try{
-                        Robot robo = new Robot();
-                        robo.delay(1500);
-                        robo.keyPress(KeyEvent.VK_A);
-                        robo.delay(100);
-                        robo.keyRelease(KeyEvent.VK_A);
-                    }catch(Exception ex){
-                        ex.printStackTrace();
-                    }
-                }
-                  
-                  if(message.equalsIgnoreCase("b")){
-                    try{
-                        Robot robo = new Robot();
-                        robo.delay(1500);
-                        robo.keyPress(KeyEvent.VK_B);
-                        robo.delay(100);
-                        robo.keyRelease(KeyEvent.VK_B);
-                    }catch(Exception ex){
-                        ex.printStackTrace();
-                    }
-                }
-                  
-                   if(message.equalsIgnoreCase("left")){
-                    try{
-                        Robot robo = new Robot();
-                        robo.delay(1500);
-                        robo.keyPress(KeyEvent.VK_L);
-                        robo.delay(100);
-                        robo.keyRelease(KeyEvent.VK_L);
-                    }catch(Exception ex){
-                        ex.printStackTrace();
-                    }
-                }
-                   
-                    if(message.equalsIgnoreCase("right")){
-                    try{
-                        Robot robo = new Robot();
-                        robo.delay(1500);
-                        robo.keyPress(KeyEvent.VK_R);
-                        robo.delay(100);
-                        robo.keyRelease(KeyEvent.VK_R);
-                    }catch(Exception ex){
-                        ex.printStackTrace();
-                    }
-                }
-	}
-    
+        try{
+            Robot robo = new Robot();
+            robo.delay(1500);
+            robo.keyPress(input.get(message));
+            robo.delay(100);
+            robo.keyRelease(input.get(message));
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+    }
 }
