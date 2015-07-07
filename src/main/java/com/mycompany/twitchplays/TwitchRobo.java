@@ -37,14 +37,17 @@ public class TwitchRobo extends PircBot {
     @Override
     public void onMessage(String channel, String sender, String login, String hostname, String message){
         
-        try{
-            Robot robo = new Robot();
-            robo.delay(1500);
-            robo.keyPress(input.get(message));
-            robo.delay(100);
-            robo.keyRelease(input.get(message));
-        }catch(Exception ex){
-            ex.printStackTrace();
+        if(input.get(message) != null)
+        {
+            try{
+                Robot robo = new Robot();
+                robo.delay(1500);
+                robo.keyPress(input.get(message));
+                robo.delay(100);
+                robo.keyRelease(input.get(message));
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }
         }
     }
 }
