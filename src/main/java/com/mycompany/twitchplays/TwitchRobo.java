@@ -19,10 +19,11 @@ public class TwitchRobo extends PircBot {
     private final Credentials cred = new Credentials();
     
     private Map<String, Integer> input = new HashMap<String, Integer>();
+    long thirtyMin = 1800000;
     
-    
-    
-    
+    /**
+     * 
+     */
     public TwitchRobo() {
         this.setName(cred.getUsername());
         input.put("enter", KeyEvent.VK_O);
@@ -33,21 +34,46 @@ public class TwitchRobo extends PircBot {
         input.put("left", KeyEvent.VK_L);
         input.put("right", KeyEvent.VK_R);
     }
-    
+    /**
+     * onMessage is a listener method that allows the user to check the irc chat
+     * and grab items from the parameter variables.
+     * @param channel
+     * @param sender
+     * @param login
+     * @param hostname
+     * @param message 
+     */
     @Override
     public void onMessage(String channel, String sender, String login, String hostname, String message){
         
+        //time gets initialized
+        long time = 0;
+        
+        while(true) {
         if(input.get(message) != null)
         {
+            time = System.currentTimeMillis();
             try{
+                //create a new robot to place in inputs
                 Robot robo = new Robot();
-                robo.delay(1500);
                 robo.keyPress(input.get(message));
                 robo.delay(100);
                 robo.keyRelease(input.get(message));
             }catch(Exception ex){
                 ex.printStackTrace();
             }
+        } else if((time + thirtyMin) == System.currentTimeMillis()){
+            try {
+                Robot robos = new Robot();
+                robos.keyPress(input.get("b"));
+                robos.delay(100);
+                robos.keyRelease(input.get("b"));
+            } catch(Exception ex) {
+                ex.printStackTrace();
+            }
+            
         }
     }
+  }
+    
 }
