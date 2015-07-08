@@ -24,6 +24,24 @@
         <title>CS313 Plays Games</title>
     </head>
     <body>
+        <%
+            // Grab the servlet
+            ServletContext app = getServletConfig().getServletContext();
+            
+            // Grab which player it needs to be!
+            String isPlayerOne = (String) app.getAttribute("player");
+            
+            // Now change the attribute!
+            if(isPlayerOne == null) {
+                isPlayerOne = "true";
+                app.setAttribute("player", "false");
+            }
+            else if (isPlayerOne.equals("true")) {
+                app.setAttribute("player", "false");
+            } else {
+                app.setAttribute("player", "true");
+            }
+        %>
         <div class="container">
             <div class="jumbotron">
                 <h1>CS313 Plays Games</h1>                
@@ -32,8 +50,19 @@
                 <div class="col-sm-8">                
                     <iframe src="http://www.twitch.tv/nintendood_prime/embed" frameborder="0" scrolling="no" height="560" width="780"></iframe>            
                 </div>
-                <div class="col-sm-4">
-                    <iframe id="chat" src="http://www.twitch.tv/nintendood_prime/chat?popout=" frameborder="0" scrolling="no" height="560" width="360"></iframe>                            
+                <div class="col-sm-4">           
+                    <div class=<%= (isPlayerOne.equals("true")) ? "" : "none"%>>
+                        <div class="purple panel-player">
+                            <p class="center">Player One</p>                            
+                        </div>
+                        <iframe id="chat" src="http://www.twitch.tv/nintendood_prime/chat?popout=" frameborder="0" scrolling="no" height="500" width="360"></iframe>                                                    
+                    </div>
+                    <div class=<%= (isPlayerOne.equals("true")) ? "none" : ""%>>
+                        <div class="purple panel-player">
+                            <p class="center">Player Two</p>                            
+                        </div>
+                        <iframe id="chat" src="http://www.twitch.tv/twitchplayssupemarrpg/chat?popout=" frameborder="0" scrolling="no" height="500" width="360"></iframe>                                                    
+                    </div>
                 </div>
             </div>
         </div>

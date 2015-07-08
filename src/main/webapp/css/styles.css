@@ -17,3 +17,19 @@ html, body {
 .none {
     display: none;
 }
+
+.center {
+    text-align: center;
+    font-size: 250%;
+    padding-top: 5px;
+    color: white;
+}
+
+.purple {
+    background-color: #6441a5;
+}
+
+.panel-player {
+    width: 360px;
+    height: 60px;
+}
