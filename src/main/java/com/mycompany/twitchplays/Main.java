@@ -17,6 +17,7 @@ import org.jibble.pircbot.IrcException;
 public class Main {
     
     public static void main(String[] args){
+        
         Credentials cred = new Credentials();
         TwitchRobo trob = new TwitchRobo();
         trob.setVerbose(true);
@@ -28,5 +29,7 @@ public class Main {
         } catch (IrcException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        
+        }
     }
-}
