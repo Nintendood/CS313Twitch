@@ -71,8 +71,21 @@ public class TwitchRobo extends PircBot {
                 } catch(Exception ex) {
                     ex.printStackTrace();
                 }
-
+        }
+    }
+  }
+    
+    @Override
+    public void onDisconnect(){
+        while (!isConnected()) {
+            try {
+                reconnect();
+            }
+            catch (Exception e) {
+                // Couldn't reconnect!
+                // Pause for a short while...?
             }
         }
     }
+    
 }
