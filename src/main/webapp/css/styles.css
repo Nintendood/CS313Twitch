@@ -6,6 +6,10 @@ h1 {
     text-align: center;
 }
 
+img {
+    width:800px;
+    height:400px;
+}
 .jumbotron {
     padding: 10px 15px;
     background-color: #6441a5;
