@@ -83,7 +83,7 @@
             <div id="about" class="panel panel-primary">
                 <div class="panel panel-heading">About</div>
                 <div class="panel panel-body">
-                    CS313 Twitch Plays is a website that allows the user to play Super Mario RPG. This is currently in development. 
+                   We Play Games is a website that allows the user to play many different types of video games. Currently we are running the old N64 Pokeman Stadium game. This can be played with two players across mutliple users on the internet.
                 </div>
             </div>
             <div id="howToPlay" class="panel panel-primary none">
@@ -112,11 +112,11 @@
                                 <td>Start Button</td>
                             </tr>
                             <tr>
-                                <td>rt</td>
+                                <td>r</td>
                                 <td>Right Trigger</td>
                             </tr>
                             <tr>
-                                <td>lt</td>
+                                <td>l</td>
                                 <td>Left Trigger</td>
                             </tr>                             
                         </tbody>
@@ -144,7 +144,7 @@
                                 <td>Directional Left</td>
                             </tr>
                             <tr>
-                                <td>Right</td>
+                                <td>right</td>
                                 <td>Directional Right</td>
                             </tr>
                         </tbody>
@@ -160,19 +160,19 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>cu</td>
+                                <td>cup</td>
                                 <td>Up Button</td>
                             </tr>
                             <tr>
-                                <td>cd</td>
+                                <td>cdown</td>
                                 <td>Down Button</td>
                             </tr>
                             <tr>
-                                <td>cl</td>
+                                <td>cleft</td>
                                 <td>Left Button</td>
                             </tr>
                             <tr>
-                                <td>cr</td>
+                                <td>cright</td>
                                 <td>Right Button</td>
                             </tr>
                         </tbody>
