@@ -44,7 +44,7 @@
         %>
         <div class="container">
             <div class="jumbotron">
-                <h1>CS313 Plays Games</h1>                
+                <h1>We Play Games</h1>                
             </div>
             <div class="row">
                 <div class="col-sm-8">                
@@ -75,6 +75,9 @@
               <li id="howToPlay">
                   <a href="#howToPlay" data-toggle="tab">How to Play</a>
               </li>
+              <li id="demoAccount">
+                  <a href="#demoAccount" data-toggle="tab">Don't Have a Twitch Account?</a>
+              </li>
             </ul>
             <br />
             <div id="about" class="panel panel-primary">
@@ -86,7 +89,121 @@
             <div id="howToPlay" class="panel panel-primary none">
                 <div class="panel panel-heading">How to Play</div>
                 <div class="panel panel-body">
-                    Currently in development.
+                    <h1>N64 Controls</h1>
+                    <h3>Input Commands</h3>
+                    <table class='table table-striped'>
+                        <thead>
+                            <tr>
+                                <th>Input</th>
+                                <th>Button Pressed</th>
+                            </tr>                          
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>a</td>
+                                <td>A Button</td>
+                            </tr>
+                            <tr>
+                                <td>b</td>
+                                <td>B Button</td>
+                            </tr>
+                            <tr>
+                                <td>start</td>
+                                <td>Start Button</td>
+                            </tr>
+                            <tr>
+                                <td>rt</td>
+                                <td>Right Trigger</td>
+                            </tr>
+                            <tr>
+                                <td>lt</td>
+                                <td>Left Trigger</td>
+                            </tr>                             
+                        </tbody>
+                    </table>                 
+                    <br />
+                    <h3>Analog Stick Commands</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Input</th>
+                                <th>Analog Controls</th>
+                            </tr>                          
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>up</td>
+                                <td>Directional Up</td>
+                            </tr>
+                            <tr>
+                                <td>down</td>
+                                <td>Directional Down</td>
+                            </tr>
+                            <tr>
+                                <td>left</td>
+                                <td>Directional Left</td>
+                            </tr>
+                            <tr>
+                                <td>Right</td>
+                                <td>Directional Right</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <h3>C-Button Commands</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Input</th>
+                                <th>C Buttons Pressed</th>
+                            </tr>                          
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>cu</td>
+                                <td>Up Button</td>
+                            </tr>
+                            <tr>
+                                <td>cd</td>
+                                <td>Down Button</td>
+                            </tr>
+                            <tr>
+                                <td>cl</td>
+                                <td>Left Button</td>
+                            </tr>
+                            <tr>
+                                <td>cr</td>
+                                <td>Right Button</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="demoAccount" class="panel panel-primary none">
+                <div class="panel panel-heading">Don't Have a Twitch Account?</div>
+                <div class="panel panel-body">
+                    <h2>Here are some demo accounts:</h2>
+                    <br />
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Username:</th>
+                                <th>Password:</th>
+                            </tr>                            
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>WePlatGames01</td>
+                                <td>playgames01</td>
+                            </tr>
+                            <tr>
+                                <td>WePlayGames02</td>
+                                <td>playgames02</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <h4>Or you can sign up for your own twitch account <a class="blue" href="http://www.twitch.tv/">here</a></h4>                  
                 </div>
             </div>
         </div>

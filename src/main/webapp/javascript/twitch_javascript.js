@@ -13,9 +13,15 @@ $(document).ready(function() {
             // Grab the div tags
             $("div#about").removeClass("none");
             $("div#howToPlay").addClass("none");
-        } else {
+            $("div#demoAccount").addClass("none");
+        } else if (id === 'howToPlay') {
             $("div#about").addClass("none");
             $("div#howToPlay").removeClass("none");
+            $("div#demoAccount").addClass("none");
+        } else {
+            $("div#about").addClass("none");
+            $("div#howToPlay").addClass("none");
+            $("div#demoAccount").removeClass("none");
         }
     });
 });

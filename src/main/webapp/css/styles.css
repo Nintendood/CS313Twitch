@@ -44,6 +44,7 @@ html, body {
     background-color: #6441a5;
     color: white;
     border-color: #6441a5;
+    font-size: 150%
 }
 
 .panel-primary {
@@ -53,4 +54,16 @@ html, body {
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
     color: white;
     background-color:#6441a5;
+}
+
+a {
+    color: white;
+}
+
+a.blue {
+    color: blue;
+}
+
+.nav-pills > li > a {
+    font-size: 130%;
 }
