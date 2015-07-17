@@ -21,6 +21,7 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <script src="javascript/twitch_javascript.js"></script>
         <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="shortcut icon" href="twitch5.png"/>
         <title>CS313 Plays Games</title>
     </head>
     <body>
