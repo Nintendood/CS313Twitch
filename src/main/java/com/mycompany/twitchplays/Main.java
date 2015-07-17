@@ -21,18 +21,22 @@ public class Main {
         
         Credentials cred = new Credentials();
         try{
-        TwitchRobo trob = new TwitchRobo();
-        trob.setVerbose(true);
-       // trob.setUp();
+       TwitchRobo trob = new TwitchRobo();
+        TwitchRobo2 treb = new TwitchRobo2();
+       trob.setVerbose(true);
+        treb.setVerbose(true);
+        //trob.setUp();
         trob.connect("irc.twitch.tv", 6667, cred.getToken());
+        treb.connect("irc.twitch.tv", 6667, cred.getToken2());
         trob.joinChannel(cred.getChannel());
+        treb.joinChannel(cred.getChannel2());
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IrcException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         } catch (AWTException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       }
         
         
         }
