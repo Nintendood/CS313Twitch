@@ -8,11 +8,13 @@ package com.mycompany.twitchplays;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.jibble.pircbot.IrcException;
 import org.jibble.pircbot.PircBot;
 
 /**
@@ -32,22 +34,22 @@ public class TwitchRobo extends PircBot {
     public TwitchRobo() throws AWTException {
        
         this.robo = new Robot();
-       
+     
         this.setName(cred.getUsername());
-        input.put("enter", KeyEvent.VK_ENTER);
-        input.put("up", KeyEvent.VK_NUMPAD8);
-        input.put("down", KeyEvent.VK_NUMPAD2);
+        input.put("start", KeyEvent.VK_ENTER);
+        input.put("up", KeyEvent.VK_G);
+        input.put("down", KeyEvent.VK_H);
+        input.put("left", KeyEvent.VK_L);
+        input.put("right", KeyEvent.VK_R);
         input.put("a", KeyEvent.VK_X);
         input.put("b", KeyEvent.VK_C);
-        input.put("left", KeyEvent.VK_NUMPAD4);
-        input.put("right", KeyEvent.VK_NUMPAD6);
         input.put("lt", KeyEvent.VK_A);
         input.put("rt", KeyEvent.VK_S);
         input.put("z", KeyEvent.VK_Z);
-        input.put("cu", KeyEvent.VK_HOME);
-        input.put("cd", KeyEvent.VK_END);
-        input.put("cl", KeyEvent.VK_DELETE);
-        input.put("cr", KeyEvent.VK_PAGE_DOWN);
+        input.put("cu", KeyEvent.VK_Q);
+        input.put("cd", KeyEvent.VK_W);
+        input.put("cl", KeyEvent.VK_E);
+        input.put("cr", KeyEvent.VK_T);
         
     }
     /**
@@ -79,21 +81,21 @@ public class TwitchRobo extends PircBot {
     @Override
     public void onDisconnect(){
         //if it ever disconnects reconnect
-            try {
-                reconnect();
+        while(!this.isConnected()){    
+        try {
                 this.connect("irc.twitch.tv", 6667, cred.getToken());
                 this.joinChannel(cred.getChannel());                
+            }catch (IOException ex) {
+                Logger.getLogger(TwitchRobo.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IrcException ex) {
+                Logger.getLogger(TwitchRobo.class.getName()).log(Level.SEVERE, null, ex);
             }
-            catch (Exception e) {
-                // Couldn't reconnect!
-                // Pause for a short while...?
-            }
+        }
     }
     
     public void setUp(){
         
         Random rand = new Random();
-        Boolean upLeft = true;
         
         //Try to get to free play
         robo.delay(1000);
@@ -109,115 +111,59 @@ public class TwitchRobo extends PircBot {
         robo.delay(1000);
         robo.keyRelease(KeyEvent.VK_X);
         robo.delay(2000);
-        robo.keyPress(KeyEvent.VK_NUMPAD2);
+        robo.keyPress(KeyEvent.VK_H);
         robo.delay(1000);
-        robo.keyRelease(KeyEvent.VK_NUMPAD2);
+        robo.keyRelease(KeyEvent.VK_H);
         robo.delay(1000);
-        robo.keyPress(KeyEvent.VK_NUMPAD6);
+        robo.keyPress(KeyEvent.VK_R);
         robo.delay(1000);
-        robo.keyRelease(KeyEvent.VK_NUMPAD6);
+        robo.keyRelease(KeyEvent.VK_R);
         robo.delay(1000);
-        robo.keyPress(KeyEvent.VK_NUMPAD6);
+        robo.keyPress(KeyEvent.VK_R);
         robo.delay(1000);
-        robo.keyRelease(KeyEvent.VK_NUMPAD6);
+        robo.keyRelease(KeyEvent.VK_R);
         
-        for(int i = 0; i < 8; ++i){
-        robo.keyPress(KeyEvent.VK_X);
-        robo.delay(1000);
-        robo.keyRelease(KeyEvent.VK_X);
-        robo.delay(1000);
-        }
-        
-        //pokemon Selection
-        for(int i = 0; i < 3; ++i){
-        System.out.println(" up left this is being called " + i);
-        robo.keyPress(KeyEvent.VK_NUMPAD2);
-        robo.delay(rand.nextInt(8080));
-        robo.keyRelease(KeyEvent.VK_NUMPAD2);
-        robo.delay(500);
-        robo.keyPress(KeyEvent.VK_NUMPAD6);
-        robo.delay(rand.nextInt(900));
-        robo.keyRelease(KeyEvent.VK_NUMPAD6);
-        robo.delay(500);
-        robo.keyPress(KeyEvent.VK_X);
-         robo.delay(800);
-         robo.keyRelease(KeyEvent.VK_X);
-         robo.delay(800);
-         robo.keyPress(KeyEvent.VK_X);
-         robo.delay(800);
-         robo.keyRelease(KeyEvent.VK_X);
-         robo.delay(800);
-        System.out.println("this is being called " + i);
-        robo.keyPress(KeyEvent.VK_NUMPAD8);
-        robo.delay(rand.nextInt(8080));
-        robo.keyRelease(KeyEvent.VK_NUMPAD8);
-        robo.delay(800);
-        robo.keyPress(KeyEvent.VK_NUMPAD6);
-        robo.delay(rand.nextInt(900));
-        robo.keyRelease(KeyEvent.VK_NUMPAD6);
-        robo.delay(800);
-        robo.keyPress(KeyEvent.VK_X);
-        robo.delay(800);
-        robo.keyRelease(KeyEvent.VK_X);
-        robo.delay(800);
-        robo.keyPress(KeyEvent.VK_X);
-        robo.delay(800);
-        robo.keyRelease(KeyEvent.VK_X);
-        robo.delay(800);
-        }
-       
-        
-        //finish the automation and start the battle
-        for(int i = 0; i < 2; ++i) {
-       robo.keyPress(KeyEvent.VK_X);
-       robo.delay(1000);
-       robo.keyRelease(KeyEvent.VK_X);
-       robo.delay(1000);
-        }
-        
-        for(int i = 0; i < 3; ++i){
-        System.out.println(" up left this is being called " + i);
-        robo.keyPress(KeyEvent.VK_NUMPAD2);
-        robo.delay(rand.nextInt(8080));
-        robo.keyRelease(KeyEvent.VK_NUMPAD2);
-        robo.delay(1000);
-        robo.keyPress(KeyEvent.VK_NUMPAD6);
-        robo.delay(rand.nextInt(800));
-        robo.keyRelease(KeyEvent.VK_NUMPAD6);
-        robo.delay(1000);
-        robo.keyPress(KeyEvent.VK_X);
-         robo.delay(1000);
-         robo.keyRelease(KeyEvent.VK_X);
-         robo.delay(1000);
-         robo.keyPress(KeyEvent.VK_X);
-         robo.delay(1000);
-         robo.keyRelease(KeyEvent.VK_X);
-         robo.delay(1000);
-        System.out.println("this is being called " + i);
-        robo.keyPress(KeyEvent.VK_NUMPAD8);
-        robo.delay(rand.nextInt(8080));
-        robo.keyRelease(KeyEvent.VK_NUMPAD8);
-        robo.delay(1000);
-        robo.keyPress(KeyEvent.VK_NUMPAD6);
-        robo.delay(rand.nextInt(800));
-        robo.keyRelease(KeyEvent.VK_NUMPAD6);
-        robo.delay(1000);
-        robo.keyPress(KeyEvent.VK_X);
-        robo.delay(1000);
-        robo.keyRelease(KeyEvent.VK_X);
-        robo.delay(1000);
+        for(int i = 0; i < 7; ++i){
         robo.keyPress(KeyEvent.VK_X);
         robo.delay(1000);
         robo.keyRelease(KeyEvent.VK_X);
         robo.delay(1000);
         }
 
-          for(int i = 0; i < 2; ++i) {
-       robo.keyPress(KeyEvent.VK_X);
-       robo.delay(1000);
-       robo.keyRelease(KeyEvent.VK_X);
-       robo.delay(1000);
-        }
+        //pokemon Selection
+        robo.keyPress(KeyEvent.VK_H);
+        robo.delay(rand.nextInt(1000));
+        robo.keyRelease(KeyEvent.VK_H);
+        robo.delay(500);
+        robo.keyPress(KeyEvent.VK_X);
+         robo.delay(800);
+         robo.keyRelease(KeyEvent.VK_X);
+         robo.delay(800);
+         robo.keyPress(KeyEvent.VK_X);
+         robo.delay(800);
+         robo.keyRelease(KeyEvent.VK_X);
+         robo.delay(800);
+        
+        robo.keyPress(KeyEvent.VK_K);
+        robo.delay(1000);
+        robo.keyRelease(KeyEvent.VK_K);
+        robo.delay(1000);
+        
+        robo.keyPress(KeyEvent.VK_V);
+        robo.delay(rand.nextInt(1000));
+        robo.keyRelease(KeyEvent.VK_V);
+        robo.delay(1000);
+        robo.keyPress(KeyEvent.VK_K);
+         robo.delay(1000);
+         robo.keyRelease(KeyEvent.VK_K);
+         robo.delay(1000);
+         robo.keyPress(KeyEvent.VK_K);
+         robo.delay(1000);
+         robo.keyRelease(KeyEvent.VK_K);
+         robo.delay(1000);
     }
+
+     
+    
     
 }
