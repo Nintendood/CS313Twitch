@@ -45,7 +45,12 @@
         %>
         <div class="container">
             <div class="jumbotron">
-                <h1>We Play Games</h1>                
+                <div class="jumbotron logo">
+                <img src="twitch5.png" alt="logo" />
+                <div class="header">                    
+                    <h1>We Play Games</h1>
+                </div>
+            </div>               
             </div>
             <div class="row">
                 <div class="col-sm-8">                
@@ -185,7 +190,7 @@
             <div id="demoAccount" class="panel panel-primary none">
                 <div class="panel panel-heading">Don't Have a Twitch Account?</div>
                 <div class="panel panel-body">
-                    <h2>We've got you covered. Here are some demo accounts anyone can use:</h2>
+                    <h2>We've got you covered. Here are some demo accounts anyone can use!</h2>
                     <br />
                     <table class="table table-striped">
                         <thead>
