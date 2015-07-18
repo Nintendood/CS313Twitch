@@ -7,7 +7,7 @@ h1 {
 }
 
 img {
-    width:900px;
+    width:1000px;
 }
 .jumbotron {
     padding: 10px 15px;
@@ -38,6 +38,7 @@ img {
 
 p{
     color: white;
+    text-align:center;
 }
 
 html, body {
