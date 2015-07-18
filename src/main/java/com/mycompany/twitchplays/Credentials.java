@@ -6,7 +6,7 @@
 package com.mycompany.twitchplays;
 
 /**
- *
+ * Crendentials
  * @author samuel
  */
 public class Credentials {
