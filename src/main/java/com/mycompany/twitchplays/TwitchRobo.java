@@ -123,12 +123,37 @@ public class TwitchRobo extends PircBot {
         robo.delay(1000);
         robo.keyRelease(KeyEvent.VK_R);
         
-        for(int i = 0; i < 7; ++i){
+        for(int i = 0; i < 4; ++i){
         robo.keyPress(KeyEvent.VK_X);
         robo.delay(1000);
         robo.keyRelease(KeyEvent.VK_X);
         robo.delay(1000);
         }
+        
+        for(int i = 0; i < 4; ++i) {
+        robo.keyPress(KeyEvent.VK_H);
+        robo.delay(1000);
+        robo.keyRelease(KeyEvent.VK_H);
+        robo.delay(500);
+        }
+        
+        robo.keyPress(KeyEvent.VK_X);
+        robo.delay(800);
+        robo.keyRelease(KeyEvent.VK_X);
+        robo.delay(800);
+        robo.keyPress(KeyEvent.VK_X);
+        robo.delay(800);
+        robo.keyRelease(KeyEvent.VK_X);
+        robo.delay(800);
+        
+        robo.keyPress(KeyEvent.VK_H);
+        robo.delay(1000);
+        robo.keyRelease(KeyEvent.VK_H);
+        robo.delay(500);
+        robo.keyPress(KeyEvent.VK_X);
+         robo.delay(800);
+         robo.keyRelease(KeyEvent.VK_X);
+         robo.delay(800);
 
         //pokemon Selection
         robo.keyPress(KeyEvent.VK_H);
@@ -144,6 +169,10 @@ public class TwitchRobo extends PircBot {
          robo.keyRelease(KeyEvent.VK_X);
          robo.delay(800);
         
+        robo.keyPress(KeyEvent.VK_V);
+        robo.delay(1000);
+        robo.keyRelease(KeyEvent.VK_V);
+        robo.delay(1000);
         robo.keyPress(KeyEvent.VK_K);
         robo.delay(1000);
         robo.keyRelease(KeyEvent.VK_K);
