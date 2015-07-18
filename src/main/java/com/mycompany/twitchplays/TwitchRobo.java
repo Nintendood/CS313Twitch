@@ -43,13 +43,13 @@ public class TwitchRobo extends PircBot {
         input.put("right", KeyEvent.VK_R);
         input.put("a", KeyEvent.VK_X);
         input.put("b", KeyEvent.VK_C);
-        input.put("lt", KeyEvent.VK_A);
-        input.put("rt", KeyEvent.VK_S);
+        input.put("l", KeyEvent.VK_A);
+        input.put("r", KeyEvent.VK_S);
         input.put("z", KeyEvent.VK_Z);
-        input.put("cu", KeyEvent.VK_Q);
-        input.put("cd", KeyEvent.VK_W);
-        input.put("cl", KeyEvent.VK_E);
-        input.put("cr", KeyEvent.VK_T);
+        input.put("cup", KeyEvent.VK_Q);
+        input.put("cdown", KeyEvent.VK_W);
+        input.put("cleft", KeyEvent.VK_E);
+        input.put("cright", KeyEvent.VK_T);
         
     }
     /**
