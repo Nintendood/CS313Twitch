@@ -22,7 +22,7 @@
         <script src="javascript/twitch_javascript.js"></script>
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         <link rel="shortcut icon" href="twitch5.png"/>
-        <title>CS313 Plays Games</title>
+        <title>We Play Games!</title>
     </head>
     <body>
         <%
@@ -68,7 +68,7 @@
             </div>
         </div>
         <br />
-        <div class="container">
+<div class="container">
             <ul class="nav nav-pills">
               <li id="about" class="active">
                   <a href="#about" data-toggle="tab">About</a>
@@ -84,13 +84,15 @@
             <div id="about" class="panel panel-primary">
                 <div class="panel panel-heading">About</div>
                 <div class="panel panel-body">
-                   We Play Games is a website that allows the user to play many different types of video games. Currently we are running the old N64 Pokeman Stadium game. This can be played with two players across mutliple users on the internet.
+                   We Play Games is a service that allows users to play many different types of video games through the chat on Twitch. Players enter commands for either Player One or Player Two.
+                   In memory of Satoru Iwata, we are are currently running Pokémon Stadium for the Nintendo 64, but more games will be introduced in the future! 
+                   Choose a side, and have fun!
                 </div>
             </div>
             <div id="howToPlay" class="panel panel-primary none">
                 <div class="panel panel-heading">How to Play</div>
                 <div class="panel panel-body">
-                    <h1>N64 Controls</h1>
+                    <h1>Nintendo 64 Controls</h1>
                     <h3>Input Commands</h3>
                     <table class='table table-striped'>
                         <thead>
@@ -183,7 +185,7 @@
             <div id="demoAccount" class="panel panel-primary none">
                 <div class="panel panel-heading">Don't Have a Twitch Account?</div>
                 <div class="panel panel-body">
-                    <h2>Here are some demo accounts:</h2>
+                    <h2>We've got you covered. Here are some demo accounts anyone can use:</h2>
                     <br />
                     <table class="table table-striped">
                         <thead>
@@ -204,7 +206,7 @@
                         </tbody>
                     </table>
                     <br />
-                    <h4>Or you can sign up for your own twitch account <a class="blue" href="http://www.twitch.tv/">here</a></h4>                  
+                    You are, of course, welcome (and encouraged) to sign up for your very own Twitch account <a class="blue" href="http://www.twitch.tv/">here!</a>                 
                 </div>
             </div>
         </div>
