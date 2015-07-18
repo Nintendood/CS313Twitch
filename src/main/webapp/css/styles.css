@@ -26,6 +26,10 @@ img {
     padding-left: 100px;
 }
 
+.top {
+    padding-top: 30px;
+}
+
 .header > p {
     padding-left: 30px;
 }
