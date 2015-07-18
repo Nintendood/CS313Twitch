@@ -21,4 +21,16 @@ public class Credentials {
     public String getChannel() {
         return "";
     }
+    
+    public String getToken2() {
+        return "";
+    }
+    
+    public String getChannel2() {
+        return "";
+    }
+    
+    public String getUsername2() {
+        return "";
+    }
 }
